@@ -16,8 +16,11 @@
  */
 
 #import "ImageFactory.h"
+#import "Kdb4Node.h"
+#import "UUID.h"
 
 #define NUM_IMAGES 69
+#define SIZE_1X 24
 
 @interface ImageFactory ()
 @property (nonatomic, strong) NSMutableArray *standardImages;
@@ -53,11 +56,25 @@
     return self.standardImages;
 }
 
-- (UIImage *)imageForGroup:(KdbGroup *)group {
+- (UIImage *)imageForGroup:(KdbGroup *)group fromTree:(KdbTree *)tree {
+    if ([group isKindOfClass:[Kdb4Group class]] && tree != nil) {
+        Kdb4Group *kdb4Group = (Kdb4Group *)group;
+        if (kdb4Group.customIconUuid != nil) {
+            Kdb4Tree *kdb4Tree = (Kdb4Tree *)tree;
+            return [self customImageForUuid:kdb4Group.customIconUuid fromTree:kdb4Tree];
+        }
+    }
     return [self imageForIndex:group.image];
 }
 
-- (UIImage *)imageForEntry:(KdbEntry *)entry {
+- (UIImage *)imageForEntry:(KdbEntry *)entry fromTree:(KdbTree *)tree {
+    if ([entry isKindOfClass:[Kdb4Entry class]] && tree != nil) {
+        Kdb4Entry *kdb4Entry = (Kdb4Entry *)entry;
+        if (kdb4Entry.customIconUuid != nil) {
+            Kdb4Tree *kdb4Tree = (Kdb4Tree *)tree;
+            return [self customImageForUuid:kdb4Entry.customIconUuid fromTree:kdb4Tree];
+        }
+    }
     return [self imageForIndex:entry.image];
 }
 
@@ -73,6 +90,50 @@
     }
 
     return image;
+}
+
+- (UIImage *) customImageForUuid:(UUID *)customIconUuid fromTree:(Kdb4Tree *)tree {
+    if (tree == nil || tree.customIcons.count == 0)
+        return nil;
+
+    for (CustomIcon *customIcon in tree.customIcons) {
+        if ([customIcon.uuid isEqual:customIconUuid]) {
+            NSData *decodedImageData = [[NSData alloc]initWithBase64EncodedString:customIcon.data options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            
+            UIImage *originalImage = [UIImage imageWithData:decodedImageData];
+            
+            CGSize size;
+            size.height = SIZE_1X;
+            size.width = SIZE_1X;
+            
+            UIImage *scaledImage = [self imageResize:originalImage andResizeTo:size];
+            return scaledImage;
+        }
+    }
+
+    return nil;
+}
+
+- (UIImage *)imageResize:(UIImage*)originalImage andResizeTo:(CGSize)newSize
+{
+    // Avoid redundant drawing
+    if (CGSizeEqualToSize(originalImage.size, newSize)) {
+        return originalImage;
+    }
+    
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    
+    // Create drawing context
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, scale);
+    
+    // Draw
+    [originalImage drawInRect:CGRectMake(0.0f, 0.0f, newSize.width, newSize.height)];
+    
+    // Capture resulting image
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return newImage;
 }
 
 @end

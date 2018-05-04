@@ -23,8 +23,8 @@
 + (ImageFactory *)sharedInstance;
 
 - (NSArray *)images;
-- (UIImage *)imageForGroup:(KdbGroup *)group;
-- (UIImage *)imageForEntry:(KdbEntry *)entry;
+- (UIImage *)imageForGroup:(KdbGroup *)group fromTree:(KdbTree *)tree;
+- (UIImage *)imageForEntry:(KdbEntry *)entry fromTree:(KdbTree *)tree;
 - (UIImage *)imageForIndex:(NSInteger)index;
 
 @end

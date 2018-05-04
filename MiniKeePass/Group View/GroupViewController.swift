@@ -42,6 +42,7 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
     private var documentInteractionController: UIDocumentInteractionController?
 
+    private var tree: KdbTree!
     private var groups: [KdbGroup]!
     private var entries: [KdbEntry]!
 
@@ -244,6 +245,8 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let imageFactory = ImageFactory.sharedInstance()
+        let appDelegate = AppDelegate.getDelegate()
+        let databaseDocument = appDelegate?.databaseDocument
 
         var cell: UITableViewCell
         switch Section.AllValues[indexPath.section] {
@@ -252,14 +255,14 @@ class GroupViewController: UITableViewController, UISearchResultsUpdating {
 
             cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell")!
             cell.textLabel?.text = group.name
-            cell.imageView?.image = imageFactory?.image(for: group)
+            cell.imageView?.image = imageFactory?.image(for: group, from: databaseDocument?.kdbTree)
 
         case .entries:
             let entry = entries[indexPath.row]
 
             cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell")!
             cell.textLabel?.text = entry.title()
-            cell.imageView?.image = imageFactory?.image(for: entry)
+            cell.imageView?.image = imageFactory?.image(for: entry, from: databaseDocument?.kdbTree)
 
             // Detail text is a combination of username and url
             var accountDescription = ""

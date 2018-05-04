@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271EAC2F2095EB6500AB3F30 /* ImageFactoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 271EAC2E2095EB6500AB3F30 /* ImageFactoryTest.m */; };
 		4E8C169316B3E871004195A1 /* fr-createdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168E16B3E871004195A1 /* fr-createdb.html */; };
 		4E8C169416B3E871004195A1 /* fr-dropbox.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C168F16B3E871004195A1 /* fr-dropbox.html */; };
 		4E8C169516B3E871004195A1 /* fr-itunes.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E8C169016B3E871004195A1 /* fr-itunes.html */; };
@@ -136,6 +137,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		271EAC312095EB6500AB3F30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 689DFFCC13A4273F005EBD36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 689DFFD413A4273F005EBD36;
+			remoteInfo = MiniKeePass;
+		};
 		526D9FAA167CDC010097213E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 526D9FA3167CDC010097213E /* MBProgressHUD.xcodeproj */;
@@ -146,6 +154,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271EAC2C2095EB6500AB3F30 /* MiniKeePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniKeePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		271EAC2E2095EB6500AB3F30 /* ImageFactoryTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageFactoryTest.m; sourceTree = "<group>"; };
+		271EAC302095EB6500AB3F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8C168E16B3E871004195A1 /* fr-createdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-createdb.html"; sourceTree = "<group>"; };
 		4E8C168F16B3E871004195A1 /* fr-dropbox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-dropbox.html"; sourceTree = "<group>"; };
 		4E8C169016B3E871004195A1 /* fr-itunes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fr-itunes.html"; sourceTree = "<group>"; };
@@ -370,6 +381,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		271EAC292095EB6500AB3F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD213A4273F005EBD36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +408,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271EAC2D2095EB6500AB3F30 /* MiniKeePassTests */ = {
+			isa = PBXGroup;
+			children = (
+				271EAC2E2095EB6500AB3F30 /* ImageFactoryTest.m */,
+				271EAC302095EB6500AB3F30 /* Info.plist */,
+			);
+			path = MiniKeePassTests;
+			sourceTree = "<group>";
+		};
 		4E8C168D16B3E871004195A1 /* fr */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +685,7 @@
 				689D030313A42B63005EBD36 /* LICENSE.txt */,
 				689D030413A42B63005EBD36 /* README.md */,
 				689DFFDF13A4273F005EBD36 /* MiniKeePass */,
+				271EAC2D2095EB6500AB3F30 /* MiniKeePassTests */,
 				682D44F01603883900156830 /* IOStream */,
 				689D02B013A42B63005EBD36 /* KeePassLib */,
 				689D02F313A42B63005EBD36 /* KissXML */,
@@ -672,6 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				689DFFD513A4273F005EBD36 /* MiniKeePass.app */,
+				271EAC2C2095EB6500AB3F30 /* MiniKeePassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -865,6 +894,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		271EAC2B2095EB6500AB3F30 /* MiniKeePassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 271EAC332095EB6500AB3F30 /* Build configuration list for PBXNativeTarget "MiniKeePassTests" */;
+			buildPhases = (
+				271EAC282095EB6500AB3F30 /* Sources */,
+				271EAC292095EB6500AB3F30 /* Frameworks */,
+				271EAC2A2095EB6500AB3F30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				271EAC322095EB6500AB3F30 /* PBXTargetDependency */,
+			);
+			name = MiniKeePassTests;
+			productName = MiniKeePassTests;
+			productReference = 271EAC2C2095EB6500AB3F30 /* MiniKeePassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		689DFFD413A4273F005EBD36 /* MiniKeePass */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "MiniKeePass" */;
@@ -892,6 +939,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Self;
 				TargetAttributes = {
+					271EAC2B2095EB6500AB3F30 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 689DFFD413A4273F005EBD36;
+					};
 					689DFFD413A4273F005EBD36 = {
 						DevelopmentTeam = G9ZT7943FZ;
 						LastSwiftMigration = 0900;
@@ -933,6 +985,7 @@
 			projectRoot = "";
 			targets = (
 				689DFFD413A4273F005EBD36 /* MiniKeePass */,
+				271EAC2B2095EB6500AB3F30 /* MiniKeePassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -948,6 +1001,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		271EAC2A2095EB6500AB3F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD313A4273F005EBD36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1014,6 +1074,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		271EAC282095EB6500AB3F30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271EAC2F2095EB6500AB3F30 /* ImageFactoryTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		689DFFD113A4273F005EBD36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1100,6 +1168,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		271EAC322095EB6500AB3F30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 689DFFD413A4273F005EBD36 /* MiniKeePass */;
+			targetProxy = 271EAC312095EB6500AB3F30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		687AAA991889F8B400AB8AC5 /* AppStore.txt */ = {
 			isa = PBXVariantGroup;
@@ -1157,6 +1233,57 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		271EAC342095EB6500AB3F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MiniKeePassTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jflan.MiniKeePassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniKeePass.app/MiniKeePass";
+			};
+			name = Debug;
+		};
+		271EAC352095EB6500AB3F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MiniKeePassTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jflan.MiniKeePassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniKeePass.app/MiniKeePass";
+			};
+			name = Release;
+		};
 		689D000413A42740005EBD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1313,6 +1440,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		271EAC332095EB6500AB3F30 /* Build configuration list for PBXNativeTarget "MiniKeePassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				271EAC342095EB6500AB3F30 /* Debug */,
+				271EAC352095EB6500AB3F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		689D000613A42740005EBD36 /* Build configuration list for PBXNativeTarget "MiniKeePass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

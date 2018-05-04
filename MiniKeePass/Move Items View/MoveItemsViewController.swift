@@ -114,11 +114,13 @@ class MoveItemsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let groupModel = groupModels[indexPath.row]
+        let appDelegate = AppDelegate.getDelegate()
+        let databaseDocument = appDelegate?.databaseDocument
 
         let cell = tableView.dequeueReusableCell(withIdentifier: groupModel.selectable ? SelectableReuseIdentifier : UnselectableReuseIdentifier, for: indexPath) as! GroupCell
         cell.groupTitleLabel.text = groupModel.name
         let imageFactory = ImageFactory.sharedInstance()
-        cell.groupImageView.image = imageFactory?.image(for: groupModel.group)
+        cell.groupImageView.image = imageFactory?.image(for: groupModel.group, from: databaseDocument?.kdbTree)
         cell.leadingContraint.constant = CGFloat(groupModel.indent * IndentWidth)
 
         return cell
